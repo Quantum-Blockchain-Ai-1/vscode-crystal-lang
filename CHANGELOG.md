@@ -1,10 +1,79 @@
 # Change Log
 
-## [Unreleased]
-The Changelog will be updated on the upcoming v1.0 release
+## [0.9.7] - 2025-01-20
 
-### Todo
-- See [roadmap](https://github.com/crystal-lang-tools/vscode-crystal-lang/wiki/Roadmap).
+### Change
+
+- Don't start new line as comment if current line is a comment [#205](https://github.com/crystal-lang-tools/vscode-crystal-lang/issues/205)
+
+## [0.9.6] - 2024-09-29
+
+### Fix
+
+- Use separate cache directory for each project / target [#201](https://github.com/crystal-lang-tools/vscode-crystal-lang/issues/201)
+
+## [0.9.5] - 2024-07-05
+
+### Add
+
+- Add configuration option `crystal-lang.server-env` for adding environment variables to be passed to the LSP
+
+## [0.9.4] - 2024-05-16
+
+### Add
+
+- Add configuration option `crystal-lang.disable-gc` to disable the garbage collector when running compiler tools.
+
+## [0.9.3] - 2024-03-01
+
+### Fix
+
+- Don't highlight unused after macro interp [#190](https://github.com/crystal-lang-tools/vscode-crystal-lang/issues/190)
+- Don't autocomplete in comments [#178](https://github.com/crystal-lang-tools/vscode-crystal-lang/issues/178)
+- Spec bug fix
+- Improve word pattern regex to not match colons preceding namespaces
+
+## [0.9.2] - 2024-02-20
+
+### Fix
+
+- Add highlighting for built-in spec keywords [#186](https://github.com/crystal-lang-tools/vscode-crystal-lang/issues/186)
+- Add keywords to autocomplete [#187](https://github.com/crystal-lang-tools/vscode-crystal-lang/issues/187)
+- Don't highlight method calls as unused [#188](https://github.com/crystal-lang-tools/vscode-crystal-lang/issues/188)
+
+## [0.9.1] - 2024-02-06
+
+### Fix
+
+- V 0.9 won't catch some errors [#183](https://github.com/crystal-lang-tools/vscode-crystal-lang/issues/183)
+- Spawn problem tool if `crystal tool dependencies` failed
+- General formatting
+
+## [0.9.0] - 2024-02-01
+
+### Fix
+
+- Color change when adding return type to class method [#157](https://github.com/crystal-lang-tools/vscode-crystal-lang/issues/157)
+- Error executing Crystal plugin. spawn crystal ENOENT [#102](https://github.com/crystal-lang-tools/vscode-crystal-lang/issues/102),
+  Error executing Crystal plugin. spawn bash ENOENT in Windows [#172](https://github.com/crystal-lang-tools/vscode-crystal-lang/issues/172)
+- Auto-formatting issue with some keywords [#158](https://github.com/crystal-lang-tools/vscode-crystal-lang/issues/102)
+- Hover feature does not work with Windows11 PC and v0.8.4 of the extension (Native Windows Crystal, not WSL) [#176](https://github.com/crystal-lang-tools/vscode-crystal-lang/issues/176)
+- With compiler path set properly still get error upon opening first .cr file [#177](https://github.com/crystal-lang-tools/vscode-crystal-lang/issues/177)
+- Max processes not respected (there's now only one instance of the compiler running at once) [#122](https://github.com/crystal-lang-tools/vscode-crystal-lang/issues/122)
+- Use a separate task provider for shards (thanks @refi64) [#145](https://github.com/crystal-lang-tools/vscode-crystal-lang/pull/145)
+- Stop the LSP when the extension is shutting down, where previously it would just stay on / active
+
+### Add
+
+- Ability to view and debug expanded source code from macros [#4](https://github.com/crystal-lang-tools/vscode-crystal-lang/issues/4)
+- Add support for Jump to Definition [#42](https://github.com/crystal-lang-tools/vscode-crystal-lang/issues/42)
+- Crystal support in Markdown code blocks [#56](https://github.com/crystal-lang-tools/vscode-crystal-lang/issues/56)
+- Add Crystal Specs to native Testing UI (disabled by default for user-experience) [#163](https://github.com/crystal-lang-tools/vscode-crystal-lang/issues/163)
+- Supporting mutiple main files (entry points) for a single project [#175](https://github.com/crystal-lang-tools/vscode-crystal-lang/issues/175)
+- Add unused variable highlighting (thanks @grkek) [#155](https://github.com/crystal-lang-tools/vscode-crystal-lang/pull/155)
+- make Crystal grammar compatible with TextMate (thanks @WhereIsX) [#150](https://github.com/crystal-lang-tools/vscode-crystal-lang/pull/150)
+- GitHub Codespaces support (as long as Crystal is installed)
+- Show problems in ECR files
 
 ## [0.6.0] - 2020-09-19
 
