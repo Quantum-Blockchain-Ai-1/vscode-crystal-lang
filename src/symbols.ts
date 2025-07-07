@@ -26,7 +26,7 @@ const CONSTANT_PATTERN =
 const ENUM_OR_UNION_PATTERN =
 	/^\s*(?:private\s+)?(?:enum|union)\s+(\w+)[\r\n;]?$/;
 const DEF_PATTERN =
-	/^\s*(?:abstract\s+)?(?:(?:private|protected)\s+)?(?:def|fun)\s+(\w+)(?:[\(\)\*:,]+)?.*$/;
+	/^\s*(abstract\s+)?(?:(?:private|protected)\s+)?(def|fun)\s+([^\( ]*)(?:[\(\)\*:,]+)?.*$/;
 const PROPERTY_PATTERN =
 	/^\s*(?:(?:private|protected)\s+)?(?:class_)?(?:property|getter|setter)(?:!|\?)?\s+(\w+)(?:(?:\s+:\s+\w+)?(?:\s*=.+)?)?(?:,\s*)?[\r\n;]?/;
 const IVAR_PATTERN = /^\s*@(\w+)\s+[:=].+[\r\n;]?$/;
@@ -57,7 +57,7 @@ class CrystalDocumentSymbolProvider implements DocumentSymbolProvider {
 			matches = DEF_PATTERN.exec(line);
 			if (matches && matches.length) {
 				this.create(
-					matches[1],
+					matches[3],
 					this.container.length ? SymbolKind.Method : SymbolKind.Function,
 					document,
 					index
