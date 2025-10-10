@@ -1,5 +1,10 @@
 # Change Log
 
+## [0.9.8] - 2025-10-10
+
+- Dependency security updates
+- Improvements to symbol parsing [#211](https://github.com/crystal-lang-tools/vscode-crystal-lang/pull/211)
+
 ## [0.9.7] - 2025-01-20
 
 ### Change
